@@ -30,6 +30,36 @@
         "irc": "irc://irc.freenode.net/october",
         "source": "https://github.com/octobercms/october"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:numencode/fundamentals-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:numencode/widgets-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:rainlab/blog-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:rainlab/builder-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:rainlab/pages-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:rainlab/sitemap-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:rainlab/translate-plugin.git"
+        }
+    ],
     "require": {
         "php": ">=7.0.8",
         "ext-mbstring": "*",
@@ -39,7 +69,15 @@
         "october/backend": "~1.0",
         "october/cms": "~1.0",
         "laravel/framework": "~5.5.40",
-        "wikimedia/composer-merge-plugin": "1.4.1"
+        "wikimedia/composer-merge-plugin": "1.4.1",
+
+        "numencode/fundamentals-plugin": "dev-master",
+        "numencode/widgets-plugin": "dev-master",
+
+        "rainlab/blog-plugin": "dev-master",
+        "rainlab/pages-plugin": "dev-master",
+        "rainlab/sitemap-plugin": "dev-master",
+        "rainlab/translate-plugin": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.7",
@@ -47,7 +85,8 @@
         "phpunit/phpunit-selenium": "~1.2",
         "meyfa/phpunit-assert-gd": "1.1.0",
         "squizlabs/php_codesniffer": "3.*",
-        "php-parallel-lint/php-parallel-lint": "^1.0"
+        "php-parallel-lint/php-parallel-lint": "^1.0",
+        "rainlab/builder-plugin": "dev-master"
     },
     "autoload-dev": {
         "classmap": [
