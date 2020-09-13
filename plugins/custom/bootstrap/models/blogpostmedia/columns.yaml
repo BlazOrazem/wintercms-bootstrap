@@ -1,0 +1,33 @@
+columns:
+    id:
+        label: id
+        type: number
+        invisible: true
+    post_id:
+        label: post_id
+        type: number
+        searchable: true
+    title:
+        label: title
+        type: text
+        searchable: true
+    picture:
+        label: picture
+        type: text
+        searchable: true
+    is_published:
+        label: is_published
+        type: text
+        searchable: true
+    sort_order:
+        label: sort_order
+        type: number
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        invisible: true
+    updated_at:
+        label: updated_at
+        type: datetime
+        invisible: true
