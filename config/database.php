@@ -81,7 +81,7 @@ return [
         'sqlsrv' => [
             'driver'   => 'sqlsrv',
             'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', 5432),
+            'port' => env('DB_PORT', 1433),
             'database' => env('DB_DATABASE', 'database'),
             'username' => env('DB_USERNAME', ''),
             'password' => env('DB_PASSWORD', ''),
