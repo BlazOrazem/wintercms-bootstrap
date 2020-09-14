@@ -18,7 +18,7 @@ class ExtendBlog
     {
         Post::extend(function ($post) {
             $post->hasMany['media'] = [BlogPostMedia::class, 'table' => 'custom_bootstrap_blog_post_media'];
-            $post->implement[] = '@NumenCode.Fundamentals.Behaviors.Relationable';
+            $post->implement[] = '@NumenCode.Fundamentals.Behaviors.RelationableModel';
             $post->addDynamicProperty('relationable', ['media_list' => 'media']);
         });
     }
