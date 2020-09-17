@@ -1,6 +1,7 @@
 title = "Blog"
 url = "/blog"
 layout = "default"
+description = "It's about the story."
 is_hidden = 0
 
 [blogPosts]
@@ -15,16 +16,23 @@ postPage = "blog/post"
 slug = "{{ :slug }}"
 displayEmpty = 1
 categoryPage = "blog/category"
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 10
+showProviderBadge = 1
 ==
-<h1 class="mt-4 mb-3">Blog Home One
-  <small>Subheading</small>
+<h1 class="mt-4 mb-3">{{ this.page.title }}
+  <small>{{ this.page.description }}</small>
 </h1>
 
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">
-    <a href="index.html">Home</a>
-  </li>
-  <li class="breadcrumb-item active">Blog Home 1</li>
+    <li class="breadcrumb-item">
+        <a href="/">Home</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Blog
+    </li>
 </ol>
 
 <div class="row">
@@ -40,18 +48,24 @@ categoryPage = "blog/category"
     <div class="card mb-4">
       <h5 class="card-header">Search</h5>
       <div class="card-body">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-append">
-            <button class="btn btn-secondary" type="button">Go!</button>
-          </span>
-        </div>
+          <div class="input-group">
+          {% component 'searchInput' %}
+          </div>
+{#        <div class="input-group">#}
+{#          <input type="text" class="form-control" placeholder="Search for...">#}
+{#          <span class="input-group-append">#}
+{#            <button class="btn btn-secondary" type="button">Go!</button>#}
+{#          </span>#}
+{#        </div>#}
       </div>
     </div>
 
     <!-- Categories Widget -->
     <div class="card my-4">
-        {% component 'blogCategories' %}
+      <h5 class="card-header">Categories</h5>
+      <div class="card-body">
+          {% component 'blogCategories' %}
+      </div>
     </div>
 
     <!-- Side Widget -->

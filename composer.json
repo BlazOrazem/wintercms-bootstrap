@@ -58,6 +58,10 @@
         {
             "type": "git",
             "url": "git@github.com:rainlab/translate-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:OFFLINE-GmbH/oc-site-search-plugin"
         }
     ],
     "require": {
@@ -75,7 +79,9 @@
         "rainlab/blog-plugin": "dev-master",
         "rainlab/pages-plugin": "dev-master",
         "rainlab/sitemap-plugin": "dev-master",
-        "rainlab/translate-plugin": "dev-master"
+        "rainlab/translate-plugin": "dev-master",
+
+        "offline/oc-site-search-plugin": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0|^9.0",
