@@ -1,0 +1,17 @@
+title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+==
+<?php
+function onEnd()
+{
+    $this->page->title = $this->post->title;
+}
+?>
+==
+{% component 'blogPost' %}
