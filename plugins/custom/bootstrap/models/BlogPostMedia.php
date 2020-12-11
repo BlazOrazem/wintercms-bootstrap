@@ -14,7 +14,7 @@ class BlogPostMedia extends Model
         'title' => 'required',
     ];
 
-    public $fillable = [
+    protected $fillable = [
         'title',
         'picture',
         'is_published',
