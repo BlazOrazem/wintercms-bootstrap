@@ -19,8 +19,7 @@ function onEnd()
 }
 ?>
 ==
-{#{% component 'blogPost' %}#}
-{#{{ dd(post.excerpt) }}#}
+{% set previewImage = post.getPrimaryPicture() %}
 
 <!-- Page Heading/Breadcrumbs -->
 <h1 class="mt-4 mb-3">{{ post.title }}
@@ -44,7 +43,9 @@ function onEnd()
     <div class="col-lg-8">
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+        {% if previewImage %}
+            <img class="img-fluid rounded" src="{{ previewImage.picture|media|resize('900x300.crop') }}" alt="{{ previewImage.title }}">
+        {% endif %}
 
         <hr>
 

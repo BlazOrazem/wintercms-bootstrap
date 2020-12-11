@@ -18,8 +18,17 @@ class ExtendBlog
     {
         Post::extend(function ($post) {
             $post->hasMany['media'] = [BlogPostMedia::class, 'table' => 'custom_bootstrap_blog_post_media'];
-            $post->implement[] = '@NumenCode.Fundamentals.Behaviors.RelationableModel';
+            $post->implement[] = 'October.Rain.Database.Behaviors.Purgeable';
+            $post->implement[] = 'NumenCode.Fundamentals.Behaviors.RelationableModel';
             $post->addDynamicProperty('relationable', ['media_list' => 'media']);
+
+            $post->addDynamicMethod('getPrimaryPicture', function () use ($post) {
+                if (!$post->media_list) {
+                    return null;
+                }
+
+                return $post->media_list[0];
+            });
         });
     }
 
