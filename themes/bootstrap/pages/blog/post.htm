@@ -19,7 +19,6 @@ function onEnd()
 }
 ?>
 ==
-{% set previewImage = post.getPrimaryPicture() %}
 
 <!-- Page Heading/Breadcrumbs -->
 <h1 class="mt-4 mb-3">{{ post.title }}
@@ -43,8 +42,8 @@ function onEnd()
     <div class="col-lg-8">
 
         <!-- Preview Image -->
-        {% if previewImage %}
-            <img class="img-fluid rounded" src="{{ previewImage.picture|media|resize('900x300.crop') }}" alt="{{ previewImage.title }}">
+        {% if post.picture %}
+            <img class="img-fluid rounded" src="{{ post.picture|media|resize('900x300.crop') }}" alt="{{ post.title }}">
         {% endif %}
 
         <hr>
@@ -62,6 +61,34 @@ function onEnd()
         {{ post.content_html | raw }}
 
         <hr>
+
+        {% if post.hasGallery %}
+            <h4 class="mt-4 mb-4">Photo gallery</h4>
+            <div class="row">
+                {% for item in post.gallery %}
+                    <div class="col-sm">
+                        <figure class="figure">
+                            <img src="{{ item.picture|media|resize('800x600.crop') }}" class="figure-img img-fluid rounded" alt="{{ item.title }}">
+                            <figcaption class="figure-caption">{{ item.title }}</figcaption>
+                        </figure>
+                    </div>
+                    {% if loop.index is divisible by(3) %}
+                        <div class="w-100"></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <hr>
+        {% endif %}
+
+        {% if post.hasFiles %}
+            <h4 class="mt-4 mb-2">Attachments</h4>
+            <ul>
+                {% for item in post.files %}
+                    <li><a href="{{ item.file|media }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endif %}
 
         <!-- Comments Form -->
         <div class="card my-4">

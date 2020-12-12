@@ -1,6 +1,5 @@
 <?php namespace Custom\Bootstrap;
 
-use Backend;
 use System\Classes\PluginBase;
 use Custom\Bootstrap\Bootstrap\ExtendBlog;
 
@@ -23,7 +22,7 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        (new ExtendBlog())->init();
+//        (new ExtendBlog())->init();
     }
 
     public function registerComponents()
