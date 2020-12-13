@@ -1743,7 +1743,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/fundamentals-plugin.git",
-                "reference": "8c4285e2e4225c3758261920d659647f4c06636e"
+                "reference": "f686ad52ec6733a8bd4bbdfceea351605d24be09"
             },
             "require": {
                 "laravelcollective/remote": "^6.2",
@@ -1754,7 +1754,7 @@
             },
             "type": "october-plugin",
             "description": "NumenCode Fundamentals plugin for October CMS",
-            "time": "2020-12-13T20:29:55+00:00"
+            "time": "2020-12-13T22:05:25+00:00"
         },
         {
             "name": "numencode/widgets-plugin",
