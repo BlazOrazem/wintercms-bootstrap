@@ -16,6 +16,7 @@ return [
             'key'              => env('REMOTE_PRODUCTION_KEY'),
             'path'             => env('REMOTE_PRODUCTION_PATH'),
             'branch'           => env('REMOTE_PRODUCTION_BRANCH', 'prod'),
+            // 'master_branch'    => env('REMOTE_PRODUCTION_MASTER_BRANCH'),
             'host'             => env('REMOTE_PRODUCTION_HOST'),
             'username'         => env('REMOTE_PRODUCTION_USERNAME'),
             'keyphrase'        => env('REMOTE_PRODUCTION_KEYPHRASE', ''),
