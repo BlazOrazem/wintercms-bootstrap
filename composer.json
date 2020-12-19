@@ -69,7 +69,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.3",
         "october/rain": "1.1.*",
         "october/system": "1.1.*",
         "october/backend": "1.1.*",
@@ -86,7 +86,8 @@
         "rainlab/sitemap-plugin": "dev-master",
         "rainlab/translate-plugin": "dev-master",
 
-        "offline/oc-site-search-plugin": "dev-master"
+        "offline/oc-site-search-plugin": "dev-master",
+        "renatio/dropboxadapter-plugin": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0|^9.0",
@@ -128,7 +129,7 @@
     "config": {
         "preferred-install": "dist",
         "platform": {
-            "php": "7.2"
+            "php": "7.3"
         }
     },
     "minimum-stability": "dev",

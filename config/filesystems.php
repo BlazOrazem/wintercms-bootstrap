@@ -66,6 +66,12 @@ return [
             'region'    => 'IAD',
         ],
 
+        // Dropbox API setup: https://www.dropbox.com/developers/apps
+        'dropbox' => [
+            'driver'             => 'dropbox',
+            'authorizationToken' => env('DROPBOX_AUTH_TOKEN', ''),
+        ],
+
     ],
 
 ];
