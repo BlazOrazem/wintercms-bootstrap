@@ -14,7 +14,7 @@ return [
     'connections' => [
         'production' => [
             'key'         => env('REMOTE_PRODUCTION_KEY'),
-            'path'        => env('REMOTE_PRODUCTION_PATH'),
+            'path'        => rtrim(env('REMOTE_PRODUCTION_PATH'), '/'),
             'branch'      => env('REMOTE_PRODUCTION_BRANCH', 'prod'),
             // 'master_branch'    => env('REMOTE_PRODUCTION_MASTER_BRANCH'),
             'host'        => env('REMOTE_PRODUCTION_HOST'),
