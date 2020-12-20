@@ -27,7 +27,10 @@ class Plugin extends PluginBase
 
     public function registerSchedule($schedule)
     {
-        $schedule->command('data:backup dropbox')->daily()->at('17:00');
+        $schedule->command('project:backup dropbox')->weeklyOn(1, '01:00');
+        $schedule->command('media:backup dropbox')->daily()->at('02:00');
+        $schedule->command('db:backup dropbox')->daily()->at('03:00');
+        $schedule->command('project:commit')->daily()->at('04:00');
     }
 
     public function registerComponents()
