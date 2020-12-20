@@ -26,13 +26,32 @@ return [
                 'www_user'    => env('REMOTE_PRODUCTION_WWW_USER'),
                 'www_folders' => env('REMOTE_PRODUCTION_WWW_FOLDERS'),
             ],
-            'database' => [
+            'database'    => [
                 'name'     => env('REMOTE_DB_DATABASE'),
                 'username' => env('REMOTE_DB_USERNAME'),
                 'password' => env('REMOTE_DB_PASSWORD'),
                 'tables'   => [
-                    'rainlab_blog_posts',
+                    // Numencode
+                    'numencode_widgets_features_groups',
+                    'numencode_widgets_features_items',
+                    'numencode_widgets_highlights_groups',
+                    'numencode_widgets_highlights_items',
+                    'numencode_widgets_promotions_groups',
+                    'numencode_widgets_promotions_items',
+                    // Rainlab
                     'rainlab_blog_categories',
+                    'rainlab_blog_posts',
+                    'rainlab_blog_posts_categories',
+                    'rainlab_sitemap_definitions',
+                    'rainlab_translate_attributes',
+                    'rainlab_translate_indexes',
+                    'rainlab_translate_locales',
+                    'rainlab_translate_messages',
+                    // System
+                    'system_files',
+                    'system_mail_layouts',
+                    'system_mail_partials',
+                    'system_mail_templates',
                 ],
             ],
         ],
