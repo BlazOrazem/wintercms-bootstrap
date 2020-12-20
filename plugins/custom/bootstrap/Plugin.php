@@ -25,6 +25,11 @@ class Plugin extends PluginBase
 //        (new ExtendBlog())->init();
     }
 
+    public function registerSchedule($schedule)
+    {
+        $schedule->command('data:backup')->daily()->at('17:00');
+    }
+
     public function registerComponents()
     {
         return [];
