@@ -6,6 +6,7 @@ composer.phar
 .env
 .env.*.php
 .env.php
+.env.cypress
 selenium.php
 /bootstrap/compiled.php
 .phpunit.result.cache

@@ -17,7 +17,9 @@ class Plugin extends PluginBase
 
     public function register()
     {
-        //
+        if (app()->environment() == 'development') {
+            app()->register('Laracasts\Cypress\CypressServiceProvider');
+        }
     }
 
     public function boot()
