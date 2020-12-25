@@ -3,12 +3,14 @@ items:
         title: Home
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: index
-        cmsPage: null
         replace: 0
         viewBag:
+            locale:
+                sl:
+                    title: Domov
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
@@ -16,12 +18,14 @@ items:
         title: About
         nesting: 0
         type: static-page
-        url: null
         code: ''
         reference: about
-        cmsPage: null
         replace: 0
         viewBag:
+            locale:
+                sl:
+                    title: 'O nas'
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
@@ -33,19 +37,23 @@ items:
         reference: demo
         replace: 0
         viewBag:
+            locale:
+                sl:
+                    title: Demo
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Blog
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: blog
-        cmsPage: null
-        replace: null
         viewBag:
+            locale:
+                sl:
+                    title: Blog
+                    url: ''
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
