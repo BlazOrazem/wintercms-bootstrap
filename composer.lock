@@ -2082,7 +2082,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/fundamentals-plugin.git",
-                "reference": "db33cb835eb90c59a67400c2afc0a9a1cbfca4dc"
+                "reference": "da7371dbfcb02f62363209df7b80effa707fffa2"
             },
             "require": {
                 "laravelcollective/remote": "^6.2",
@@ -2093,7 +2093,7 @@
             },
             "type": "october-plugin",
             "description": "NumenCode Fundamentals plugin for October CMS",
-            "time": "2020-12-20T20:40:25+00:00"
+            "time": "2020-12-26T12:08:04+00:00"
         },
         {
             "name": "numencode/widgets-plugin",
@@ -2101,11 +2101,11 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/widgets-plugin.git",
-                "reference": "06603dfc6a6c8eac96a5395ba9da88c2cf7f6b39"
+                "reference": "1f66dd30a49da8998032fd4ae8ed84b4de5cd3a6"
             },
             "type": "october-plugin",
             "description": "NumenCode Widgets plugin for October CMS",
-            "time": "2020-12-12T12:59:35+00:00"
+            "time": "2020-12-26T12:21:07+00:00"
         },
         {
             "name": "october/backend",
