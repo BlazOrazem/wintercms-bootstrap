@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "460201a8dff3070338bb746371524a7b",
+    "content-hash": "d2a8c0d8c9ff2a2f4f62814cbb6b2c1d",
     "packages": [
         {
             "name": "composer/installers",
@@ -698,16 +698,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.24",
+            "version": "2.1.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "ca90a3291eee1538cd48ff25163240695bd95448"
+                "reference": "0dbf5d78455d4d6a41d186da50adc1122ec066f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ca90a3291eee1538cd48ff25163240695bd95448",
-                "reference": "ca90a3291eee1538cd48ff25163240695bd95448",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/0dbf5d78455d4d6a41d186da50adc1122ec066f4",
+                "reference": "0dbf5d78455d4d6a41d186da50adc1122ec066f4",
                 "shasum": ""
             },
             "require": {
@@ -758,7 +758,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-14T15:56:27+00:00"
+            "time": "2020-12-29T14:50:06+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -2065,16 +2065,33 @@
             "time": "2020-12-20T10:01:03+00:00"
         },
         {
+            "name": "numencode/blogextension-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:numencode/blogextension-plugin.git",
+                "reference": "3887e9111ee827d64f8fa8a2767e9a2be3878e9a"
+            },
+            "type": "october-plugin",
+            "description": "NumenCode BlogExtension plugin for October CMS",
+            "time": "2021-01-02T14:49:59+00:00"
+        },
+        {
             "name": "numencode/blogmedia-plugin",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/blogmedia-plugin.git",
-                "reference": "62513af6fca67cf67a15ca1638e6f96af423089b"
+                "reference": "3b4d3a1aa34dfddac423851c4c6b1327eb5e1f48"
+            },
+            "require": {
+                "numencode/fundamentals-plugin": "dev-master",
+                "php": ">=7.3",
+                "rainlab/blog-plugin": "dev-master"
             },
             "type": "october-plugin",
-            "description": "NumenCode BlogMedia plugin for October CMS",
-            "time": "2020-12-12T12:56:24+00:00"
+            "description": "NumenCode Blog Media plugin for October CMS",
+            "time": "2021-01-02T15:32:26+00:00"
         },
         {
             "name": "numencode/fundamentals-plugin",
@@ -2082,18 +2099,37 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/fundamentals-plugin.git",
-                "reference": "da7371dbfcb02f62363209df7b80effa707fffa2"
+                "reference": "2258ac4dbcec10959cbd30af1dbec3e6c27538b4"
             },
             "require": {
                 "laravelcollective/remote": "^6.2",
-                "mobiledetect/mobiledetectlib": "^2.8"
+                "mobiledetect/mobiledetectlib": "^2.8",
+                "php": ">=7.3"
             },
             "require-dev": {
                 "symfony/var-dumper": "^5.2"
             },
             "type": "october-plugin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Blaz Orazem",
+                    "email": "blaz@orazem.si",
+                    "homepage": "https://orazem.si",
+                    "role": "Founder"
+                }
+            ],
             "description": "NumenCode Fundamentals plugin for October CMS",
-            "time": "2020-12-26T12:08:04+00:00"
+            "homepage": "https://www.numencode.com",
+            "keywords": [
+                "cms",
+                "laravel",
+                "october",
+                "octobercms"
+            ],
+            "time": "2021-01-02T16:07:17+00:00"
         },
         {
             "name": "numencode/widgets-plugin",
@@ -7844,6 +7880,7 @@
         "numencode/fundamentals-plugin": 20,
         "numencode/widgets-plugin": 20,
         "numencode/blogmedia-plugin": 20,
+        "numencode/blogextension-plugin": 20,
         "rainlab/blog-plugin": 20,
         "rainlab/pages-plugin": 20,
         "rainlab/sitemap-plugin": 20,

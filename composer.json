@@ -45,6 +45,10 @@
         },
         {
             "type": "git",
+            "url": "git@github.com:numencode/blogextension-plugin.git"
+        },
+        {
+            "type": "git",
             "url": "git@github.com:rainlab/blog-plugin.git"
         },
         {
@@ -80,6 +84,7 @@
         "numencode/fundamentals-plugin": "dev-master",
         "numencode/widgets-plugin": "dev-master",
         "numencode/blogmedia-plugin": "dev-master",
+        "numencode/blogextension-plugin": "dev-master",
 
         "rainlab/blog-plugin": "dev-master",
         "rainlab/pages-plugin": "dev-master",
