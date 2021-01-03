@@ -42,8 +42,8 @@ function onEnd()
     <div class="col-lg-8">
 
         <!-- Preview Image -->
-        {% if post.picture %}
-            <img class="img-fluid rounded" src="{{ post.picture|media|resize('900x300.crop') }}" alt="{{ post.title }}">
+        {% if post.primaryPicture %}
+            <img class="img-fluid rounded" src="{{ post.primaryPicture.picture|media|resize('900x300.crop') }}" alt="{{ post.primaryPicture.title }}">
         {% endif %}
 
         <hr>
@@ -62,10 +62,10 @@ function onEnd()
 
         <hr>
 
-        {% if post.hasGallery %}
+        {% if post.pictures %}
             <h4 class="mt-4 mb-4">Photo gallery</h4>
             <div class="row">
-                {% for item in post.gallery %}
+                {% for item in post.pictures %}
                     <div class="col-sm">
                         <figure class="figure">
                             <img src="{{ item.picture|media|resize('800x600.crop') }}" class="figure-img img-fluid rounded" alt="{{ item.title }}">
@@ -80,7 +80,7 @@ function onEnd()
             <hr>
         {% endif %}
 
-        {% if post.hasFiles %}
+        {% if post.files %}
             <h4 class="mt-4 mb-2">Attachments</h4>
             <ul>
                 {% for item in post.files %}

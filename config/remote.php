@@ -32,6 +32,8 @@ return [
                 'password' => env('REMOTE_DB_PASSWORD'),
                 'tables'   => [
                     // Numencode
+                    'numencode_blogextension_files',
+                    'numencode_blogextension_pictures',
                     'numencode_widgets_features_groups',
                     'numencode_widgets_features_items',
                     'numencode_widgets_highlights_groups',

@@ -1,5 +1,2 @@
 1.0.1:
     - 'Initialize plugin.'
-1.0.2:
-    - 'Created table  custom_bootstrap_blog_post_media'
-    - builder_table_create_custom_bootstrap_blog_post_media.php
