@@ -58,7 +58,7 @@ function onEnd()
             <p class="lead">{{ post.excerpt }}</p>
         {% endif %}
 
-        {{ post.content_html | raw }}
+        {{ post.content_html | raw | resize_images }}
 
         <hr>
 
