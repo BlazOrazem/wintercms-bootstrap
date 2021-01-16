@@ -52,13 +52,9 @@ items:
             isExternal: '0'
     -
         title: Blog
-        nesting: null
         type: cms-page
-        url: null
         code: ''
-        reference: blog/index
-        cmsPage: null
-        replace: null
+        reference: blog/blog
         viewBag:
             locale:
                 sl:
@@ -69,9 +65,13 @@ items:
             isExternal: '0'
     -
         title: Lang
+        nesting: null
         type: url
         url: /
         code: ''
+        reference: null
+        cmsPage: null
+        replace: null
         viewBag:
             locale:
                 sl:
@@ -83,9 +83,13 @@ items:
         items:
             -
                 title: English
+                nesting: null
                 type: url
                 url: /en
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         sl:
@@ -96,9 +100,13 @@ items:
                     isExternal: '0'
             -
                 title: Slovenščina
+                nesting: null
                 type: url
                 url: /sl
                 code: ''
+                reference: null
+                cmsPage: null
+                replace: null
                 viewBag:
                     locale:
                         sl:
