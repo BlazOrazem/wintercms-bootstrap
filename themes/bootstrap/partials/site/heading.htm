@@ -1,0 +1,18 @@
+description = "Page heading and breadcrumbs"
+
+[viewBag]
+
+[staticBreadcrumbs]
+
+[blogBreadcrumbs]
+categoryPage = "blog/category"
+categoryAlias = "blogPosts"
+postAlias = "blogPost"
+compatibility = 1
+==
+<h1 class="mt-4 mb-3">{{ this.page.title }}
+    {{ this.page.meta_title ? ('<small>' ~ this.page.meta_title ~ '</small>')|raw : '' }}
+</h1>
+
+{% component 'staticBreadcrumbs' %}
+{% component 'blogBreadcrumbs' %}

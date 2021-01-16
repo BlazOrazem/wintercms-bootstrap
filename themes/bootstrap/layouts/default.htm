@@ -8,29 +8,30 @@ default = 0
 <html lang="en">
 
 <head>
-  {% partial 'site/header' %}
+    {% partial 'site/header' %}
 </head>
 
 <body>
+    <!-- Navigation -->
+    {% partial 'site/navigation' %}
 
-  <!-- Navigation -->
-  {% partial 'site/navigation' %}
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        {% partial 'site/heading' %}
 
-  <!-- Page Content -->
-  <div class="container">
-    {% page %}
-  </div>
+        {% page %}
+    </div>
 
-  <!-- Footer -->
-  {% partial 'site/footer' %}
+    <!-- Footer -->
+    {% partial 'site/footer' %}
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="{{ 'assets/javascript/jquery.min.js'|theme }}"></script>
-  <script src="{{ 'assets/javascript/bootstrap.bundle.min.js'|theme }}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ 'assets/javascript/jquery.min.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/bootstrap.bundle.min.js'|theme }}"></script>
 
-  {% framework extras %}
-  {% scripts %}
-
+    {% framework extras %}
+    {% scripts %}
 </body>
 
 </html>

@@ -1,7 +1,11 @@
 title = "Blog Post"
-url = "/blog/post/:slug"
+url = "/blog/:slug"
 layout = "default"
 is_hidden = 0
+
+[viewBag]
+localeTitle[sl] = "Blog zapis"
+localeUrl[sl] = "/blog/:slug"
 
 [blogPost]
 slug = "{{ :slug }}"
@@ -11,6 +15,15 @@ categoryPage = "blog/category"
 slug = "{{ :slug }}"
 displayEmpty = 1
 categoryPage = "blog/category"
+
+[blogReadingTime]
+postAlias = "blogPost"
+readingSpeed = 100
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
 ==
 <?php
 function onEnd()
@@ -19,23 +32,6 @@ function onEnd()
 }
 ?>
 ==
-
-<!-- Page Heading/Breadcrumbs -->
-<h1 class="mt-4 mb-3">{{ post.title }}
-    <small>by
-        <a href="#">Start Bootstrap</a>
-    </small>
-</h1>
-
-<ol class="breadcrumb">
-    <li class="breadcrumb-item">
-        <a href="/">Home</a>
-    </li>
-    <li class="breadcrumb-item active">
-        Blog
-    </li>
-</ol>
-
 <div class="row">
 
     <!-- Post Content Column -->
@@ -50,6 +46,12 @@ function onEnd()
 
         <!-- Date/Time -->
         <p>Posted on {{ post.published_at | date('rainlab.blog::lang.post.date_format' | trans) }}</p>
+
+        <hr>
+
+        <p class="lead">
+            {% component 'blogReadingTime' %}
+        </p>
 
         <hr>
 
@@ -145,21 +147,17 @@ function onEnd()
 
         <!-- Search Widget -->
         <div class="card mb-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="inpug-group-append">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-                </div>
-            </div>
+          <h5 class="card-header">{{ 'Search' |_ }}</h5>
+          <div class="card-body">
+              <div class="input-group">
+                  {% component 'searchInput' %}
+              </div>
+          </div>
         </div>
 
         <!-- Categories Widget -->
-        <!-- Categories Widget -->
         <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
+            <h5 class="card-header">{{ 'Categories' |_ }}</h5>
             <div class="card-body">
                 {% component 'blogCategories' %}
             </div>
@@ -167,9 +165,9 @@ function onEnd()
 
         <!-- Side Widget -->
         <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
+            <h5 class="card-header">{{ 'Side Widget' |_ }}</h5>
             <div class="card-body">
-                You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                {% content 'side-widget' %}
             </div>
         </div>
 

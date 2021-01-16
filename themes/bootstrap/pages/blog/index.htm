@@ -1,0 +1,60 @@
+title = "Blog"
+url = "/blog"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "blog/category"
+==
+<div class="row">
+
+    <div class="col-md-8">
+        {% component 'blogPosts' %}
+    </div>
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+
+        <!-- Search Widget -->
+        <div class="card mb-4">
+            <h5 class="card-header">{{ 'Search' |_ }}</h5>
+            <div class="card-body">
+                <div class="input-group">
+                    {% component 'searchInput' %}
+                </div>
+            </div>
+        </div>
+    
+        <!-- Categories Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">{{ 'Categories' |_ }}</h5>
+            <div class="card-body">
+                {% component 'blogCategories' %}
+            </div>
+        </div>
+    
+        <!-- Side Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">{{ 'Side Widget' |_ }}</h5>
+            <div class="card-body">
+                {% content 'side-widget' %}
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,91 @@
+description = "Blog layout"
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 10
+showProviderBadge = 1
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "blog/category"
+
+[staticPage]
+useContent = 1
+default = 0
+==
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% partial 'site/header' %}
+</head>
+
+<body>
+    <!-- Navigation -->
+    {% partial 'site/navigation' %}
+
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        {% partial 'site/heading' %}
+
+        <div class="row">
+
+          <div class="col-md-8">
+              {% page %}
+          </div>
+
+          <!-- Sidebar Widgets Column -->
+          <div class="col-md-4">
+
+            <!-- Search Widget -->
+            <div class="card mb-4">
+              <h5 class="card-header">{{ 'Search' |_ }}</h5>
+              <div class="card-body">
+                  <div class="input-group">
+                  {% component 'searchInput' %}
+                  </div>
+        {#        <div class="input-group">#}
+        {#          <input type="text" class="form-control" placeholder="Search for...">#}
+        {#          <span class="input-group-append">#}
+        {#            <button class="btn btn-secondary" type="button">Go!</button>#}
+        {#          </span>#}
+        {#        </div>#}
+              </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="card my-4">
+              <h5 class="card-header">{{ 'Categories' |_ }}</h5>
+              <div class="card-body">
+                  {% component 'blogCategories' %}
+              </div>
+            </div>
+
+            <!-- Side Widget -->
+            <div class="card my-4">
+              <h5 class="card-header">{{ 'Side Widget' |_ }}</h5>
+              <div class="card-body">
+                  {% content 'side-widget' %}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    {% partial 'site/footer' %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ 'assets/javascript/jquery.min.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/bootstrap.bundle.min.js'|theme }}"></script>
+
+    {% framework extras %}
+    {% scripts %}
+</body>
+
+</html>

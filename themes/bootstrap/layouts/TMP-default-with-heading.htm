@@ -1,12 +1,15 @@
-description = "Homepage layout"
+description = "Default layout with heading"
 
 [staticPage]
 useContent = 1
 default = 0
 
-[promotions]
-title = 1
-layout = "default"
+[staticBreadcrumbs]
+
+[blogBreadcrumbs]
+categoryPage = "blog/category"
+categoryAlias = "blogPosts"
+postAlias = "blogPost"
 ==
 <!DOCTYPE html>
 <html lang="en">
@@ -16,29 +19,31 @@ layout = "default"
 </head>
 
 <body>
-
     <!-- Navigation -->
     {% partial 'site/navigation' %}
-    
-    <header>
-    {% component 'promotions' %}
-    </header>
-    
+
     <!-- Page Content -->
     <div class="container">
-    {% page %}
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">{{ this.page.title }}
+            {{ this.page.meta_title ? ('<small>' ~ this.page.meta_title ~ '</small>')|raw : '' }}
+        </h1>
+
+        {% component 'staticBreadcrumbs' %}
+        {% component 'blogBreadcrumbs' %}
+
+        {% page %}
     </div>
-    
+
     <!-- Footer -->
     {% partial 'site/footer' %}
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="{{ 'assets/javascript/jquery.min.js'|theme }}"></script>
     <script src="{{ 'assets/javascript/bootstrap.bundle.min.js'|theme }}"></script>
-    
+
     {% framework extras %}
     {% scripts %}
-
 </body>
 
 </html>
