@@ -24,6 +24,23 @@ readingSpeed = 100
 useAutoComplete = 1
 autoCompleteResultCount = 5
 showProviderBadge = 1
+
+[blogTagPost]
+postAlias = "blogPost"
+tagFilterPage = "blog/tag"
+
+[blogTagList]
+results = 0
+sortOrder = "name asc"
+postsCount = 1
+tagFilterPage = "blog/tag"
+
+[blogTagRelated]
+slug = "{{ :slug }}"
+results = 5
+postPage = "blog/post"
+categoryPage = "blog/category"
+tagFilterPage = "blog/tag"
 ==
 <?php
 function onEnd()
@@ -51,6 +68,10 @@ function onEnd()
 
         <p class="lead">
             {% component 'blogReadingTime' %}
+        </p>
+
+        <p>
+            {% component 'blogTagPost' %}
         </p>
 
         <hr>
@@ -160,6 +181,22 @@ function onEnd()
             <h5 class="card-header">{{ 'Categories' |_ }}</h5>
             <div class="card-body">
                 {% component 'blogCategories' %}
+            </div>
+        </div>
+
+        <!-- Tags Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">{{ 'Tags' |_ }}</h5>
+            <div class="card-body">
+                {% component 'blogTagList' %}
+            </div>
+        </div>
+
+        <!-- Tag Related Posts Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">{{ 'Tag Related Posts' |_ }}</h5>
+            <div class="card-body">
+                {% component 'blogTagRelated' %}
             </div>
         </div>
 

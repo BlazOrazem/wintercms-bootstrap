@@ -1,30 +1,31 @@
-title = "Blog"
-url = "/blog/:page?"
+title = "Blog Tag"
+url = "/blog/tag/:slug/:page?"
 layout = "default"
 is_hidden = 0
 
-[blogPosts]
-pageNumber = "{{ :page }}"
-postsPerPage = 2
-noPostsMessage = "No posts found."
-sortOrder = "published_at desc"
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
 categoryPage = "blog/category"
-postPage = "blog/post"
 
 [searchInput]
 useAutoComplete = 1
 autoCompleteResultCount = 5
 showProviderBadge = 1
 
-[blogCategories]
+[blogTagFilter]
 slug = "{{ :slug }}"
-displayEmpty = 1
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+sortOrder = "published_at desc"
+postPage = "blog/post"
 categoryPage = "blog/category"
+tagFilterPage = "blog/tag"
 ==
 <div class="row">
 
     <div class="col-md-8">
-        {% component 'blogPosts' %}
+        {% component 'blogTagFilter' %}
     </div>
 
     <!-- Sidebar Widgets Column -->
@@ -39,7 +40,7 @@ categoryPage = "blog/category"
                 </div>
             </div>
         </div>
-    
+
         <!-- Categories Widget -->
         <div class="card my-4">
             <h5 class="card-header">{{ 'Categories' |_ }}</h5>
@@ -47,7 +48,7 @@ categoryPage = "blog/category"
                 {% component 'blogCategories' %}
             </div>
         </div>
-    
+
         <!-- Side Widget -->
         <div class="card my-4">
             <h5 class="card-header">{{ 'Side Widget' |_ }}</h5>
