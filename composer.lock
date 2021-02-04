@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89fc21cad52fb9f1e10ff9642ca98629",
+    "content-hash": "7b9f8ef71e110aa069a22a6c8485dbf4",
     "packages": [
         {
             "name": "composer/installers",
@@ -861,6 +861,54 @@
             "time": "2019-12-30T23:20:37+00:00"
         },
         {
+            "name": "fakerphp/faker",
+            "version": "v1.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "ab3f5364d01f2c2c16113442fb987d26e4004913"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/ab3f5364d01f2c2c16113442fb987d26e4004913",
+                "reference": "ab3f5364d01f2c2c16113442fb987d26e4004913",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "fzaninotto/faker": "*"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "ext-intl": "*",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.8 || ^9.4.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2020-12-18T16:50:48+00:00"
+        },
+        {
             "name": "graham-campbell/guzzle-factory",
             "version": "v4.2.0",
             "source": {
@@ -1141,16 +1189,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.20.15",
+            "version": "v6.20.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b42c2d845cdd827ac5a53cacf16af4a0b5dd8be1"
+                "reference": "806082fb559fe595cb17cd6aa8571f03ed287814"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b42c2d845cdd827ac5a53cacf16af4a0b5dd8be1",
-                "reference": "b42c2d845cdd827ac5a53cacf16af4a0b5dd8be1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/806082fb559fe595cb17cd6aa8571f03ed287814",
+                "reference": "806082fb559fe595cb17cd6aa8571f03ed287814",
                 "shasum": ""
             },
             "require": {
@@ -1286,7 +1334,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2021-01-26T14:39:47+00:00"
+            "time": "2021-02-02T13:50:12+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2078,11 +2126,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/blogextension-plugin.git",
-                "reference": "bdaa49f1627623f659dc5a2ad71bdfd3d3620f77"
+                "reference": "fd6e61a4a7ea8e4ea4aedf34b03698c51d5859bb"
             },
             "require": {
+                "fakerphp/faker": "^1.13",
                 "numencode/fundamentals-plugin": "dev-master",
-                "php": ">=7.3",
+                "php": ">=7.2",
                 "rainlab/blog-plugin": "dev-master"
             },
             "type": "october-plugin",
@@ -2106,7 +2155,7 @@
                 "october",
                 "octobercms"
             ],
-            "time": "2021-01-28T21:09:26+00:00"
+            "time": "2021-02-04T21:47:37+00:00"
         },
         {
             "name": "numencode/fundamentals-plugin",
@@ -2114,12 +2163,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/fundamentals-plugin.git",
-                "reference": "f5d7696841f7774c910371669898f3a1acd927c6"
+                "reference": "13e59250734f4c6d167e31452b5795474ed62fd8"
             },
             "require": {
                 "laravelcollective/remote": "^6.2",
                 "mobiledetect/mobiledetectlib": "^2.8",
-                "php": ">=7.3"
+                "php": ">=7.2"
             },
             "require-dev": {
                 "symfony/var-dumper": "^5.2"
@@ -2145,7 +2194,7 @@
                 "october",
                 "octobercms"
             ],
-            "time": "2021-01-16T13:04:47+00:00"
+            "time": "2021-02-04T18:45:28+00:00"
         },
         {
             "name": "numencode/widgets-plugin",
@@ -2153,11 +2202,11 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/widgets-plugin.git",
-                "reference": "31eaf14647069ee2a871705b1450fe2ae158d198"
+                "reference": "b0801fdae5dfacdad7bffb13954d4ce88b497c6d"
             },
             "require": {
                 "numencode/fundamentals-plugin": "dev-master",
-                "php": ">=7.3"
+                "php": ">=7.2"
             },
             "type": "october-plugin",
             "license": [
@@ -2180,7 +2229,7 @@
                 "october",
                 "octobercms"
             ],
-            "time": "2021-01-28T21:09:45+00:00"
+            "time": "2021-01-31T19:30:14+00:00"
         },
         {
             "name": "october/backend",
@@ -3138,7 +3187,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:rainlab/pages-plugin.git",
-                "reference": "e09db6342863e45320dfe5ad5e37162ef92df25a"
+                "reference": "c0dc867a27754f162f91a108277ae8bd3d794519"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -3167,7 +3216,7 @@
                 "octobercms",
                 "pages"
             ],
-            "time": "2021-01-21T05:50:46+00:00"
+            "time": "2021-02-02T07:08:17+00:00"
         },
         {
             "name": "rainlab/sitemap-plugin",
@@ -3742,7 +3791,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -4456,16 +4505,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "37bade585ea100d235c031b258eff93b5b6bb9a9"
+                "reference": "7dee6a43493f39b51ff6c5bb2bd576fe40a76c86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/37bade585ea100d235c031b258eff93b5b6bb9a9",
-                "reference": "37bade585ea100d235c031b258eff93b5b6bb9a9",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/7dee6a43493f39b51ff6c5bb2bd576fe40a76c86",
+                "reference": "7dee6a43493f39b51ff6c5bb2bd576fe40a76c86",
                 "shasum": ""
             },
             "require": {
@@ -4531,7 +4580,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-25T14:08:25+00:00"
+            "time": "2021-02-02T06:10:15+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -6104,57 +6153,6 @@
                 }
             ],
             "time": "2020-11-10T18:47:58+00:00"
-        },
-        {
-            "name": "fzaninotto/faker",
-            "version": "v1.9.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
-                "reference": "848d8125239d7dbf8ab25cb7f054f1a630e68c2e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^2.9.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "abandoned": true,
-            "time": "2020-12-11T09:56:16+00:00"
         },
         {
             "name": "laracasts/cypress",
@@ -7870,12 +7868,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
