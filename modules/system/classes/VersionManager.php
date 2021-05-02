@@ -4,19 +4,19 @@ use File;
 use Yaml;
 use Db;
 use Carbon\Carbon;
-use October\Rain\Database\Updater;
+use Winter\Storm\Database\Updater;
 
 /**
  * Version manager
  *
  * Manages the versions and database updates for plugins.
  *
- * @package october\system
+ * @package winter\wn-system-module
  * @author Alexey Bobkov, Samuel Georges
  */
 class VersionManager
 {
-    use \October\Rain\Support\Traits\Singleton;
+    use \Winter\Storm\Support\Traits\Singleton;
 
     /**
      * Value when no updates are found.
@@ -50,7 +50,7 @@ class VersionManager
     protected $databaseHistory;
 
     /**
-     * @var October\Rain\Database\Updater
+     * @var Winter\Storm\Database\Updater
      */
     protected $updater;
 
@@ -98,6 +98,56 @@ class VersionManager
         }
 
         return true;
+    }
+
+    /**
+     * Update the current replaced plugin's version to reference the replacing plugin.
+     */
+    public function replacePlugin(PluginBase $plugin, string $replace)
+    {
+        $currentVersion = $this->getDatabaseVersion($replace);
+        if ($currentVersion === self::NO_VERSION_VALUE) {
+            return;
+        }
+
+        // We only care about the database version of the replaced plugin at this point
+        if (!$plugin->canReplacePlugin($replace, $currentVersion)) {
+            return;
+        }
+
+        $code = $plugin->getPluginIdentifier();
+
+        // add history up to $currentVersion
+        if ($versions = $this->getOldFileVersions($code, $currentVersion)) {
+            foreach ($versions as $version => $details) {
+                list($comments, $scripts) = $this->extractScriptsAndComments($details);
+                $now = now()->toDateTimeString();
+
+                foreach ($scripts as $script) {
+                    Db::table('system_plugin_history')->insert([
+                        'code'       => $code,
+                        'type'       => self::HISTORY_TYPE_SCRIPT,
+                        'version'    => $version,
+                        'detail'     => $script,
+                        'created_at' => $now,
+                    ]);
+                }
+
+                foreach ($comments as $comment) {
+                    $this->applyDatabaseComment($code, $version, $comment);
+                }
+            }
+        }
+
+        // delete replaced plugin history
+        Db::table('system_plugin_history')->where('code', $replace)->delete();
+
+        // replace installed version
+        Db::table('system_plugin_versions')
+            ->where('code', '=', $replace)
+            ->update([
+                'code' => $code
+            ]);
     }
 
     /**
@@ -256,6 +306,21 @@ class VersionManager
     }
 
     /**
+     * Returns older versions up to a supplied version, ie. applied versions.
+     */
+    protected function getOldFileVersions($code, $version = null)
+    {
+        if ($version === null) {
+            $version = self::NO_VERSION_VALUE;
+        }
+
+        $versions = $this->getFileVersions($code);
+        $position = array_search($version, array_keys($versions));
+
+        return array_slice($versions, 0, ++$position);
+    }
+
+    /**
      * Returns any new versions from a supplied version, ie. unapplied versions.
      */
     protected function getNewFileVersions($code, $version = null)
@@ -266,6 +331,7 @@ class VersionManager
 
         $versions = $this->getFileVersions($code);
         $position = array_search($version, array_keys($versions));
+
         return array_slice($versions, ++$position);
     }
 

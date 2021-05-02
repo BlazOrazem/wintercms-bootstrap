@@ -7,7 +7,7 @@ use Config;
 use Storage;
 use Request;
 use Url;
-use October\Rain\Filesystem\Definitions as FileDefinitions;
+use Winter\Storm\Filesystem\Definitions as FileDefinitions;
 use ApplicationException;
 use SystemException;
 
@@ -15,12 +15,12 @@ use SystemException;
  * Provides abstraction level for the Media Library operations.
  * Implements the library caching features and security checks.
  *
- * @package october\system
+ * @package winter\wn-system-module
  * @author Alexey Bobkov, Samuel Georges
  */
 class MediaLibrary
 {
-    use \October\Rain\Support\Traits\Singleton;
+    use \Winter\Storm\Support\Traits\Singleton;
 
     const SORT_BY_TITLE = 'title';
     const SORT_BY_SIZE = 'size';
@@ -291,6 +291,10 @@ class MediaLibrary
             if (Str::startsWith($folder, $exclude)) {
                 continue;
             }
+            if (!$this->isVisible($folder)) {
+                $exclude[] = $folder . '/';
+                continue;
+            }
 
             $result[] = $folder;
         }
@@ -512,7 +516,7 @@ class MediaLibrary
          * Validate invalid paths
          */
         $regex = '#'.implode('|', $regex).'#';
-        if (preg_match($regex, $path) !== 0 || strpos($path, '//') !== false) {
+        if (preg_match($regex, $path) !== 0 || strpos($path, '://') !== false) {
             throw new ApplicationException(Lang::get('system::lang.media.invalid_path', compact('path')));
         }
 

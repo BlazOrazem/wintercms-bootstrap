@@ -8,12 +8,13 @@ use SystemException;
 /**
  * Manages the system settings.
  *
- * @package october\system
+ * @package winter\wn-system-module
  * @author Alexey Bobkov, Samuel Georges
  */
 class SettingsManager
 {
-    use \October\Rain\Support\Traits\Singleton;
+    use \Winter\Storm\Support\Traits\Singleton;
+    use \System\Traits\LazyOwnerAlias;
 
     /**
      * Allocated category types
@@ -42,6 +43,11 @@ class SettingsManager
      * @var array List of registered items.
      */
     protected $items;
+
+    /**
+     * @var array List of owner aliases. ['Aliased.Owner' => 'Real.Owner']
+     */
+    protected $aliases = [];
 
     /**
      * @var array Grouped collection of all items, by category.
@@ -83,6 +89,9 @@ class SettingsManager
      */
     protected function init()
     {
+        foreach (static::$lazyAliases as $alias => $owner) {
+            $this->registerOwnerAlias($owner, $alias);
+        }
         $this->pluginManager = PluginManager::instance();
     }
 
@@ -126,7 +135,7 @@ class SettingsManager
         /*
          * Sort settings items
          */
-        usort($this->items, function ($a, $b) {
+        uasort($this->items, function ($a, $b) {
             return $a->order - $b->order;
         });
 
@@ -239,6 +248,18 @@ class SettingsManager
     }
 
     /**
+     * Register an owner alias
+     *
+     * @param string $owner The owner to register an alias for. Example: Real.Owner
+     * @param string $alias The alias to register. Example: Aliased.Owner
+     * @return void
+     */
+    public function registerOwnerAlias(string $owner, string $alias)
+    {
+        $this->aliases[strtolower($alias)] = $owner;
+    }
+
+    /**
      * Dynamically add an array of setting items
      * @param string $owner
      * @param array  $definitions
@@ -336,7 +357,7 @@ class SettingsManager
     {
         return (object) [
             'itemCode' => $this->contextItemCode,
-            'owner' => $this->contextOwner
+            'owner' => strtolower($this->aliases[$this->contextOwner] ?? $this->contextOwner),
         ];
     }
 
@@ -352,13 +373,10 @@ class SettingsManager
             $this->loadItems();
         }
 
-        $owner = strtolower($owner);
-        $code = strtolower($code);
+        $itemKey = $this->makeItemKey($owner, $code);
 
-        foreach ($this->items as $item) {
-            if (strtolower($item->owner) == $owner && strtolower($item->code) == $code) {
-                return $item;
-            }
+        if (isset($this->items[$itemKey])) {
+            return $this->items[$itemKey];
         }
 
         return false;
@@ -375,7 +393,7 @@ class SettingsManager
         if (!$user) {
             return $items;
         }
-        
+
         $items = array_filter($items, function ($item) use ($user) {
             if (!$item->permissions || !count($item->permissions)) {
                 return true;
@@ -394,6 +412,6 @@ class SettingsManager
      */
     protected function makeItemKey($owner, $code)
     {
-        return strtoupper($owner).'.'.strtoupper($code);
+        return strtoupper($this->aliases[strtolower($owner)] ?? $owner).'.'.strtoupper($code);
     }
 }

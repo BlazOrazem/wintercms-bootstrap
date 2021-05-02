@@ -2,7 +2,7 @@
 
 use Backend\Widgets\Form;
 use Illuminate\Database\Eloquent\Model;
-use October\Tests\Fixtures\Backend\Models\UserFixture;
+use Winter\Tests\Fixtures\Backend\Models\UserFixture;
 
 class FormTestModel extends Model
 {
@@ -19,6 +19,11 @@ class FormTestModel extends Model
     public function getDropdownOptions()
     {
         return ['dropdown', 'options'];
+    }
+
+    public function staticMethodOptions()
+    {
+        return ['static', 'method'];
     }
 }
 
@@ -160,7 +165,7 @@ class FormTest extends PluginTestCase
             'fields' => [
                 'static_method_options' => [
                     'type' => 'dropdown',
-                    'options' => '\FormHelper::staticMethodOptions',
+                    'options' => 'FormHelper::staticMethodOptions',
                     'expect' => ['static', 'method'],
                 ],
                 'callable_options' => [

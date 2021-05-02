@@ -2,7 +2,7 @@
 
 return [
     'app' => [
-        'name' => 'OctoberCMS',
+        'name' => 'Winter CMS',
         'tagline' => 'Getting back to basics',
     ],
     'locale' => [
@@ -84,7 +84,7 @@ return [
         'unnamed' => 'Unnamed theme',
         'name' => [
             'label' => 'Theme Name',
-            'help' => 'Name the theme by its unique code. For example, RainLab.Vanilla',
+            'help' => 'Name the theme by its unique code. For example, Winter.Vanilla',
         ],
     ],
     'themes' => [
@@ -100,7 +100,7 @@ return [
         'unnamed' => 'Unnamed plugin',
         'name' => [
             'label' => 'Plugin Name',
-            'help' => 'Name the plugin by its unique code. For example, RainLab.Blog',
+            'help' => 'Name the plugin by its unique code. For example, Winter.Blog',
         ],
         'by_author' => 'By :name',
     ],
@@ -140,6 +140,9 @@ return [
         'refresh_success' => 'Successfully reset the selected plugins.',
         'remove_confirm' => 'Are you sure you want to remove the selected plugins? This will remove all associated data as well.',
         'remove_success' => 'Successfully removed the selected plugins.',
+        'replace' => [
+            'multi_install_error' => 'Replacing multiple plugins is currently unsupported'
+        ]
     ],
     'project' => [
         'name' => 'Project',
@@ -200,11 +203,11 @@ return [
         'ses_key_comment' => 'Enter your SES API key',
         'ses_secret' => 'SES secret',
         'ses_secret_comment' => 'Enter your SES API secret key',
+        'ses_region' => 'SES region',
+        'ses_region_comment' => 'Enter your SES region (e.g. us-east-1)',
         'sparkpost' => 'SparkPost',
         'sparkpost_secret' => 'SparkPost secret',
         'sparkpost_secret_comment' => 'Enter your SparkPost API secret key',
-        'ses_region' => 'SES region',
-        'ses_region_comment' => 'Enter your SES region (e.g. us-east-1)',
         'drivers_hint_header' => 'Drivers not installed',
         'drivers_hint_content' => 'This mail method requires the plugin ":plugin" be installed before you can send mail.',
     ],
@@ -270,7 +273,7 @@ return [
             ],
             'panel' => 'How awesome is this panel?',
             'more' => 'Some more text',
-            'promotion' => 'Coupon code: OCTOBER',
+            'promotion' => 'Coupon code: WINTER',
             'subcopy' => 'This is the subcopy of the email',
             'thanks' => 'Thanks',
         ],
@@ -333,6 +336,8 @@ return [
         'core_set_build' => 'Setting build number',
         'update_warnings_title' => 'Some issues have been detected and require attention:',
         'update_warnings_plugin_missing' => 'The :parent_code plugin requires :code to be installed before it will work',
+        'update_warnings_plugin_replace' => 'The :plugin plugin replaces :alias, please remove :alias to ensure there are no conflicts',
+        'update_warnings_plugin_replace_cli' => 'This plugin replaces :alias, please remove :alias to ensure there are no conflicts',
         'changelog' => 'Changelog',
         'changelog_view_details' => 'View details',
         'plugins' => 'Plugins',

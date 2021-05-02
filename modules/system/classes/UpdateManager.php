@@ -13,7 +13,7 @@ use Cms\Classes\ThemeManager;
 use System\Models\Parameter;
 use System\Models\PluginVersion;
 use System\Helpers\Cache as CacheHelper;
-use October\Rain\Filesystem\Zip;
+use Winter\Storm\Filesystem\Zip;
 use Carbon\Carbon;
 use Exception;
 
@@ -22,12 +22,12 @@ use Exception;
  *
  * Handles the CMS install and update process.
  *
- * @package october\system
+ * @package winter\wn-system-module
  * @author Alexey Bobkov, Samuel Georges
  */
 class UpdateManager
 {
-    use \October\Rain\Support\Traits\Singleton;
+    use \Winter\Storm\Support\Traits\Singleton;
 
     /**
      * @var \Illuminate\Console\OutputStyle
@@ -146,10 +146,27 @@ class UpdateManager
             $this->migrateModule($module);
         }
 
+        $plugins = $this->pluginManager->getPlugins();
+
+        /*
+         * Replace plugins
+         */
+        foreach ($plugins as $code => $plugin) {
+            if (!$replaces = $plugin->getReplaces()) {
+                continue;
+            }
+            // TODO: add full support for plugins replacing multiple plugins
+            if (count($replaces) > 1) {
+                throw new ApplicationException(Lang::get('system::lang.plugins.replace.multi_install_error'));
+            }
+            foreach ($replaces as $replace) {
+                $this->versionManager->replacePlugin($plugin, $replace);
+            }
+        }
+
         /*
          * Update plugins
          */
-        $plugins = $this->pluginManager->getPlugins();
         foreach ($plugins as $code => $plugin) {
             $this->updatePlugin($code);
         }
@@ -164,6 +181,15 @@ class UpdateManager
             $modules = Config::get('cms.loadModules', []);
             foreach ($modules as $module) {
                 $this->seedModule($module);
+            }
+        }
+
+        // Set replacement warning messages
+        foreach ($this->pluginManager->getReplacementMap() as $alias => $plugin) {
+            if ($this->pluginManager->getActiveReplacementMap($alias)) {
+                $this->addMessage($plugin, Lang::get('system::lang.updates.update_warnings_plugin_replace_cli', [
+                    'alias' => '<info>' . $alias . '</info>'
+                ]));
             }
         }
 
@@ -330,7 +356,7 @@ class UpdateManager
         /*
          * Rollback plugins
          */
-        $plugins = $this->pluginManager->getPlugins();
+        $plugins = array_reverse($this->pluginManager->getAllPlugins());
         foreach ($plugins as $name => $plugin) {
             $this->rollbackPlugin($name);
         }
@@ -790,7 +816,7 @@ class UpdateManager
      */
     public function requestChangelog()
     {
-        $result = Http::get('https://octobercms.com/changelog?json');
+        $result = Http::get($this->createServerUrl('changelog'));
 
         if ($result->code == 404) {
             throw new ApplicationException(Lang::get('system::lang.server.response_empty'));
@@ -942,7 +968,7 @@ class UpdateManager
      */
     protected function createServerUrl($uri)
     {
-        $gateway = Config::get('cms.updateServer', 'http://gateway.octobercms.com/api');
+        $gateway = Config::get('cms.updateServer', 'https://api.wintercms.com/marketplace');
         if (substr($gateway, -1) != '/') {
             $gateway .= '/';
         }
@@ -1025,6 +1051,10 @@ class UpdateManager
      */
     protected function addMessage($class, $message)
     {
+        if (empty($message)) {
+            return;
+        }
+
         if (is_object($class)) {
             $class = get_class($class);
         }
@@ -1034,7 +1064,7 @@ class UpdateManager
 
         if (is_string($message)) {
             $this->messages[$class][] = $message;
-        } else if (is_array($message)) {
+        } elseif (is_array($message)) {
             array_merge($this->messages[$class], $message);
         }
     }

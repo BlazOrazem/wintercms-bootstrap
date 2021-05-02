@@ -11,17 +11,23 @@ use Config;
 /**
  * Manages the backend navigation.
  *
- * @package october\backend
+ * @package winter\wn-backend-module
  * @author Alexey Bobkov, Samuel Georges
  */
 class NavigationManager
 {
-    use \October\Rain\Support\Traits\Singleton;
+    use \Winter\Storm\Support\Traits\Singleton;
+    use \System\Traits\LazyOwnerAlias;
 
     /**
      * @var array Cache of registration callbacks.
      */
     protected $callbacks = [];
+
+    /**
+     * @var array List of owner aliases. ['Aliased.Owner' => 'Real.Owner']
+     */
+    protected $aliases = [];
 
     /**
      * @var MainMenuItem[] List of registered items.
@@ -49,6 +55,9 @@ class NavigationManager
      */
     protected function init()
     {
+        foreach (static::$lazyAliases as $alias => $owner) {
+            $this->registerOwnerAlias($owner, $alias);
+        }
         $this->pluginManager = PluginManager::instance();
     }
 
@@ -221,6 +230,18 @@ class NavigationManager
         }
 
         $this->addMainMenuItems($owner, $definitions);
+    }
+
+    /**
+     * Register an owner alias
+     *
+     * @param string $owner The owner to register an alias for. Example: Real.Owner
+     * @param string $alias The alias to register. Example: Aliased.Owner
+     * @return void
+     */
+    public function registerOwnerAlias(string $owner, string $alias)
+    {
+        $this->aliases[strtoupper($alias)] = strtoupper($owner);
     }
 
     /**
@@ -609,13 +630,21 @@ class NavigationManager
     }
 
     /**
-     * Sets the navigation context.
-     * The function sets the navigation owner.
+     * Sets the navigation context owner.
+     *
      * @param string $owner Specifies the navigation owner in the format Vendor/Module
      */
     public function setContextOwner($owner)
     {
-        $this->contextOwner = $owner;
+        $this->contextOwner = strtoupper($owner);
+    }
+
+    /**
+     * Gets the navigation context owner
+     */
+    public function getContextOwner()
+    {
+        return $this->aliases[$this->contextOwner] ?? $this->contextOwner;
     }
 
     /**
@@ -639,7 +668,7 @@ class NavigationManager
         return (object)[
             'mainMenuCode' => $this->contextMainMenuItemCode,
             'sideMenuCode' => $this->contextSideMenuItemCode,
-            'owner' => $this->contextOwner
+            'owner' => $this->getContextOwner(),
         ];
     }
 
@@ -660,7 +689,7 @@ class NavigationManager
      */
     public function isMainMenuItemActive($item)
     {
-        return $this->contextOwner === $item->owner && $this->contextMainMenuItemCode === $item->code;
+        return $this->getContextOwner() === strtoupper($item->owner) && $this->contextMainMenuItemCode === $item->code;
     }
 
     /**
@@ -691,7 +720,7 @@ class NavigationManager
             return true;
         }
 
-        return $this->contextOwner === $item->owner && $this->contextSideMenuItemCode === $item->code;
+        return $this->getContextOwner() === strtoupper($item->owner) && $this->contextSideMenuItemCode === $item->code;
     }
 
     /**
@@ -703,7 +732,7 @@ class NavigationManager
      */
     public function registerContextSidenavPartial($owner, $mainMenuItemCode, $partial)
     {
-        $this->contextSidenavPartials[$owner.$mainMenuItemCode] = $partial;
+        $this->contextSidenavPartials[$this->makeItemKey($owner, $mainMenuItemCode)] = $partial;
     }
 
     /**
@@ -716,9 +745,7 @@ class NavigationManager
      */
     public function getContextSidenavPartial($owner, $mainMenuItemCode)
     {
-        $key = $owner.$mainMenuItemCode;
-
-        return $this->contextSidenavPartials[$key] ?? null;
+        return $this->contextSidenavPartials[$this->makeItemKey($owner, $mainMenuItemCode)] ?? null;
     }
 
     /**
@@ -752,6 +779,7 @@ class NavigationManager
      */
     protected function makeItemKey($owner, $code)
     {
-        return strtoupper($owner).'.'.strtoupper($code);
+        $owner = strtoupper($owner);
+        return ($this->aliases[$owner] ?? $owner) . '.' . strtoupper($code);
     }
 }

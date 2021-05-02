@@ -11,7 +11,7 @@ use Backend\Classes\FormWidgetBase;
  *    user:
  *        label: User
  *        type: recordfinder
- *        list: ~/plugins/rainlab/user/models/user/columns.yaml
+ *        list: ~/plugins/winter/user/models/user/columns.yaml
  *        recordsPerPage: 10
  *        title: Find Record
  *        prompt: Click the Find button to find a user
@@ -23,9 +23,9 @@ use Backend\Classes\FormWidgetBase;
  *        searchMode: all
  *        searchScope: searchUsers
  *        useRelation: false
- *        modelClass: RainLab\User\Models\User
+ *        modelClass: Winter\User\Models\User
  *
- * @package october\backend
+ * @package winter\wn-backend-module
  * @author Alexey Bobkov, Samuel Georges
  */
 class RecordFinder extends FormWidgetBase
@@ -145,6 +145,11 @@ class RecordFinder extends FormWidgetBase
 
         if (!$this->useRelation && !class_exists($this->modelClass)) {
             throw new ApplicationException(Lang::get('backend::lang.recordfinder.invalid_model_class', ['modelClass' => $this->modelClass]));
+        }
+
+        $modelKey = $this->getRecordModel()->getKeyName();
+        if ($this->keyFrom === 'id' && $modelKey !== 'id') {
+            $this->keyFrom = $modelKey;
         }
 
         if (post('recordfinder_flag')) {
@@ -302,16 +307,27 @@ class RecordFinder extends FormWidgetBase
         return $this->makePartial('recordfinder_form');
     }
 
+    /**
+     * Gets the base model instance used by this field
+     *
+     * @return \Winter\Storm\Database\Model
+     */
+    protected function getRecordModel()
+    {
+        $model = null;
+        if ($this->useRelation) {
+            $model = $this->getRelationModel();
+        } else {
+            $model = new $this->modelClass;
+        }
+        return $model;
+    }
+
     protected function makeListWidget()
     {
         $config = $this->makeConfig($this->getConfig('list'));
 
-        if ($this->useRelation) {
-            $config->model = $this->getRelationModel();
-        } else {
-            $config->model = new $this->modelClass;
-        }
-
+        $config->model = $this->getRecordModel();
         $config->alias = $this->alias . 'List';
         $config->showSetup = false;
         $config->showCheckboxes = false;
