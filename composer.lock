@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1885b9d10fccf2520cda22507990984",
+    "content-hash": "83bfd22c422edf1cc5475ab0dad59d48",
     "packages": [
         {
             "name": "composer/installers",
@@ -2080,16 +2080,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.46.0",
+            "version": "2.47.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4"
+                "reference": "606262fd8888b75317ba9461825a24fc34001e1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4",
-                "reference": "2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/606262fd8888b75317ba9461825a24fc34001e1e",
+                "reference": "606262fd8888b75317ba9461825a24fc34001e1e",
                 "shasum": ""
             },
             "require": {
@@ -2165,20 +2165,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-24T17:30:44+00:00"
+            "time": "2021-04-13T21:54:02+00:00"
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.10.4",
+            "version": "v4.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e"
+                "reference": "4432ba399e47c66624bc73c8c0f811e5c109576f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c6d052fc58cb876152f89f532b95a8d7907e7f0e",
-                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4432ba399e47c66624bc73c8c0f811e5c109576f",
+                "reference": "4432ba399e47c66624bc73c8c0f811e5c109576f",
                 "shasum": ""
             },
             "require": {
@@ -2217,7 +2217,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-12-20T10:01:03+00:00"
+            "time": "2021-05-03T19:11:20+00:00"
         },
         {
             "name": "numencode/blogextension-plugin",
@@ -2772,16 +2772,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -2805,7 +2805,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -2815,7 +2815,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2020-03-23T09:12:05+00:00"
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -3053,7 +3053,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:rainlab/translate-plugin.git",
-                "reference": "972c2b84161bb40a5c275af8feb9b2e0055a7ce7"
+                "reference": "2a69101b70c9c32f2b0b6c22bf7aac04c1ecadaa"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -3082,7 +3082,7 @@
                 "octobercms",
                 "translate"
             ],
-            "time": "2021-04-30T22:30:09+00:00"
+            "time": "2021-05-05T05:35:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5848,12 +5848,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/storm.git",
-                "reference": "3ee34482f9b981c638943407d46d13fa9e53120f"
+                "reference": "0bb68efa4464f9f98ebf957f098618aa0ec33c75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/storm/zipball/3ee34482f9b981c638943407d46d13fa9e53120f",
-                "reference": "3ee34482f9b981c638943407d46d13fa9e53120f",
+                "url": "https://api.github.com/repos/wintercms/storm/zipball/0bb68efa4464f9f98ebf957f098618aa0ec33c75",
+                "reference": "0bb68efa4464f9f98ebf957f098618aa0ec33c75",
                 "shasum": ""
             },
             "require": {
@@ -5950,7 +5950,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-29T03:46:31+00:00"
+            "time": "2021-05-03T07:49:57+00:00"
         },
         {
             "name": "winter/wn-backend-module",
@@ -7240,46 +7240,6 @@
             "time": "2021-03-23T07:16:29+00:00"
         },
         {
-            "name": "rainlab/builder-plugin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rainlab/builder-plugin.git",
-                "reference": "71d51e34237ad43b9dc80639e75d8e1699f69f62"
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "october-plugin",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexey Bobkov",
-                    "email": "aleksey.bobkov@gmail.com",
-                    "role": "Co-founder"
-                },
-                {
-                    "name": "Samuel Georges",
-                    "email": "daftspunky@gmail.com",
-                    "role": "Co-founder"
-                }
-            ],
-            "description": "Builder plugin for October CMS",
-            "homepage": "https://octobercms.com/plugin/rainlab-builder",
-            "keywords": [
-                "builder",
-                "october",
-                "octobercms"
-            ],
-            "time": "2021-03-26T08:45:31+00:00"
-        },
-        {
             "name": "sebastian/cli-parser",
             "version": "1.0.1",
             "source": {
@@ -8329,6 +8289,67 @@
                 "validate"
             ],
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "winter/wn-builder-plugin",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wintercms/wn-builder-plugin.git",
+                "reference": "aa2db9d45645bdf9904a32b2907ce1e606415f10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wintercms/wn-builder-plugin/zipball/aa2db9d45645bdf9904a32b2907ce1e606415f10",
+                "reference": "aa2db9d45645bdf9904a32b2907ce1e606415f10",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "winter-plugin",
+            "extra": {
+                "installer-name": "builder"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Winter CMS Maintainers",
+                    "homepage": "https://wintercms.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Builder plugin for Winter CMS",
+            "homepage": "https://github.com/wintercms/wn-builder-plugin",
+            "keywords": [
+                "builder",
+                "winter",
+                "wintercms"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/LukeTowers",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-24T00:52:51+00:00"
         }
     ],
     "aliases": [
@@ -8371,13 +8392,12 @@
         "rainlab/sitemap-plugin": 20,
         "rainlab/translate-plugin": 20,
         "offline/oc-site-search-plugin": 20,
-        "renatio/dropboxadapter-plugin": 20,
-        "rainlab/builder-plugin": 20
+        "renatio/dropboxadapter-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.3, >=7.2, >=7.2, >=7.2, >=7.0, >=7.0, >=5.5.9, >=5.5.9, >=5.5.9, >=7.0"
+        "php": ">=7.3, >=7.2, >=7.2, >=7.2, >=7.0, >=5.5.9, >=5.5.9, >=5.5.9, >=7.0, >=7.0"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
