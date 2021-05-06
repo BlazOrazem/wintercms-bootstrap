@@ -40,26 +40,6 @@
         {
             "type": "git",
             "url": "git@github.com:numencode/blogextension-plugin.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:rainlab/blog-plugin.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:rainlab/builder-plugin.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:rainlab/pages-plugin.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:rainlab/sitemap-plugin.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:OFFLINE-GmbH/oc-site-search-plugin"
         }
     ],
     "require": {
