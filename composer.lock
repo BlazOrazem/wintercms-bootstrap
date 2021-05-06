@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83bfd22c422edf1cc5475ab0dad59d48",
+    "content-hash": "fc1c1c4be6c4d02c29b16b95081f83c3",
     "packages": [
         {
             "name": "composer/installers",
@@ -2974,117 +2974,6 @@
             "time": "2021-04-20T01:20:48+00:00"
         },
         {
-            "name": "rainlab/pages-plugin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rainlab/pages-plugin.git",
-                "reference": "b40fa8a6cf40661e3a139a6a91abf050f3d90ec7"
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.5.9"
-            },
-            "type": "october-plugin",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexey Bobkov",
-                    "email": "aleksey.bobkov@gmail.com",
-                    "role": "Co-founder"
-                },
-                {
-                    "name": "Samuel Georges",
-                    "email": "daftspunky@gmail.com",
-                    "role": "Co-founder"
-                }
-            ],
-            "description": "Pages plugin for October CMS",
-            "homepage": "https://octobercms.com/plugin/rainlab-pages",
-            "keywords": [
-                "october",
-                "octobercms",
-                "pages"
-            ],
-            "time": "2021-04-23T05:01:45+00:00"
-        },
-        {
-            "name": "rainlab/sitemap-plugin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rainlab/sitemap-plugin.git",
-                "reference": "fbeb1093a923ccd576f8929ca9df42d021dc4a66"
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.5.9"
-            },
-            "type": "october-plugin",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexey Bobkov",
-                    "email": "aleksey.bobkov@gmail.com",
-                    "role": "Co-founder"
-                },
-                {
-                    "name": "Samuel Georges",
-                    "email": "daftspunky@gmail.com",
-                    "role": "Co-founder"
-                }
-            ],
-            "description": "Sitemap plugin for October CMS",
-            "homepage": "https://octobercms.com/plugin/rainlab-sitemap",
-            "keywords": [
-                "october",
-                "octobercms",
-                "sitemap"
-            ],
-            "time": "2020-09-20T10:29:39+00:00"
-        },
-        {
-            "name": "rainlab/translate-plugin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rainlab/translate-plugin.git",
-                "reference": "2a69101b70c9c32f2b0b6c22bf7aac04c1ecadaa"
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.5.9"
-            },
-            "type": "october-plugin",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexey Bobkov",
-                    "email": "aleksey.bobkov@gmail.com",
-                    "role": "Co-founder"
-                },
-                {
-                    "name": "Samuel Georges",
-                    "email": "daftspunky@gmail.com",
-                    "role": "Co-founder"
-                }
-            ],
-            "description": "Translate plugin for October CMS",
-            "homepage": "https://octobercms.com/plugin/rainlab-translate",
-            "keywords": [
-                "october",
-                "octobercms",
-                "translate"
-            ],
-            "time": "2021-05-05T05:35:19+00:00"
-        },
-        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -5844,16 +5733,16 @@
         },
         {
             "name": "winter/storm",
-            "version": "dev-develop",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/storm.git",
-                "reference": "0bb68efa4464f9f98ebf957f098618aa0ec33c75"
+                "reference": "9b18efc1301ef27c8d5241c8b98be71398501f88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/storm/zipball/0bb68efa4464f9f98ebf957f098618aa0ec33c75",
-                "reference": "0bb68efa4464f9f98ebf957f098618aa0ec33c75",
+                "url": "https://api.github.com/repos/wintercms/storm/zipball/9b18efc1301ef27c8d5241c8b98be71398501f88",
+                "reference": "9b18efc1301ef27c8d5241c8b98be71398501f88",
                 "shasum": ""
             },
             "require": {
@@ -5950,11 +5839,11 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-05-03T07:49:57+00:00"
+            "time": "2021-04-26T05:26:17+00:00"
         },
         {
             "name": "winter/wn-backend-module",
-            "version": "dev-develop",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/wn-backend-module.git",
@@ -6017,8 +5906,67 @@
             "time": "2021-04-25T21:03:39+00:00"
         },
         {
+            "name": "winter/wn-blog-plugin",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wintercms/wn-blog-plugin.git",
+                "reference": "6fde7c84addec7a7c7a9a68981fa4ca247b2ec0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wintercms/wn-blog-plugin/zipball/6fde7c84addec7a7c7a9a68981fa4ca247b2ec0f",
+                "reference": "6fde7c84addec7a7c7a9a68981fa4ca247b2ec0f",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.0"
+            },
+            "type": "winter-plugin",
+            "extra": {
+                "installer-name": "blog"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Winter CMS Maintainers",
+                    "homepage": "https://wintercms.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Blog plugin for Winter CMS",
+            "homepage": "https://github.com/wintercms/wn-blog-plugin",
+            "keywords": [
+                "blog",
+                "plugin",
+                "winter",
+                "winter cms"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/LukeTowers",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-24T14:28:08+00:00"
+        },
+        {
             "name": "winter/wn-cms-module",
-            "version": "dev-develop",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wintercms/wn-cms-module.git",
@@ -6081,17 +6029,138 @@
             "time": "2021-04-16T03:13:06+00:00"
         },
         {
-            "name": "winter/wn-system-module",
-            "version": "dev-develop",
+            "name": "winter/wn-pages-plugin",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wintercms/wn-system-module.git",
-                "reference": "6b87e583c6d9f29e3f7c104313f316456b4b2378"
+                "url": "https://github.com/wintercms/wn-pages-plugin.git",
+                "reference": "00e37bce4e3c810074726a9cef80ece3220c1493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wintercms/wn-system-module/zipball/6b87e583c6d9f29e3f7c104313f316456b4b2378",
-                "reference": "6b87e583c6d9f29e3f7c104313f316456b4b2378",
+                "url": "https://api.github.com/repos/wintercms/wn-pages-plugin/zipball/00e37bce4e3c810074726a9cef80ece3220c1493",
+                "reference": "00e37bce4e3c810074726a9cef80ece3220c1493",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.2"
+            },
+            "type": "winter-plugin",
+            "extra": {
+                "installer-name": "pages"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Winter CMS Maintainers",
+                    "homepage": "https://wintercms.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Pages plugin for Winter CMS",
+            "homepage": "https://github.com/wintercms/wn-pages-plugin",
+            "keywords": [
+                "cms",
+                "pages",
+                "plugin",
+                "static",
+                "winter",
+                "winter cms"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/LukeTowers",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-24T15:40:47+00:00"
+        },
+        {
+            "name": "winter/wn-sitemap-plugin",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wintercms/wn-sitemap-plugin.git",
+                "reference": "1134d0d99459333c37b0eb31e66bcc45d587da7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wintercms/wn-sitemap-plugin/zipball/1134d0d99459333c37b0eb31e66bcc45d587da7f",
+                "reference": "1134d0d99459333c37b0eb31e66bcc45d587da7f",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.2"
+            },
+            "type": "winter-plugin",
+            "extra": {
+                "installer-name": "sitemap"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Winter CMS Maintainers",
+                    "homepage": "https://wintercms.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Sitemap plugin for Winter CMS",
+            "homepage": "https://github.com/wintercms/wn-sitemap-plugin",
+            "keywords": [
+                "Sitemap",
+                "cms",
+                "plugin",
+                "winter",
+                "winter cms"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/LukeTowers",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-22T15:44:38+00:00"
+        },
+        {
+            "name": "winter/wn-system-module",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wintercms/wn-system-module.git",
+                "reference": "df8d85f75c5fe35f09f780b0268bd691157b80ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wintercms/wn-system-module/zipball/df8d85f75c5fe35f09f780b0268bd691157b80ee",
+                "reference": "df8d85f75c5fe35f09f780b0268bd691157b80ee",
                 "shasum": ""
             },
             "require": {
@@ -6143,7 +6212,65 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-26T15:10:59+00:00"
+            "time": "2021-04-26T03:49:38+00:00"
+        },
+        {
+            "name": "winter/wn-translate-plugin",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wintercms/wn-translate-plugin.git",
+                "reference": "b1c539ea952b876dcf584a96a5160942d4212d39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wintercms/wn-translate-plugin/zipball/b1c539ea952b876dcf584a96a5160942d4212d39",
+                "reference": "b1c539ea952b876dcf584a96a5160942d4212d39",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=7.2"
+            },
+            "type": "winter-plugin",
+            "extra": {
+                "installer-name": "translate"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Bobkov",
+                    "email": "aleksey.bobkov@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Samuel Georges",
+                    "email": "daftspunky@gmail.com",
+                    "role": "Original Author"
+                },
+                {
+                    "name": "Winter CMS Maintainers",
+                    "homepage": "https://wintercms.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Translate plugin for Winter CMS",
+            "homepage": "https://github.com/wintercms/wn-translate-plugin",
+            "keywords": [
+                "translate",
+                "winter",
+                "wintercms"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/LukeTowers",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-27T02:25:58+00:00"
         }
     ],
     "packages-dev": [
@@ -8352,52 +8479,20 @@
             "time": "2021-04-24T00:52:51+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "1.1.999",
-            "alias_normalized": "1.1.999.0",
-            "version": "dev-develop",
-            "package": "winter/storm"
-        },
-        {
-            "alias": "1.1.999",
-            "alias_normalized": "1.1.999.0",
-            "version": "dev-develop",
-            "package": "winter/wn-system-module"
-        },
-        {
-            "alias": "1.1.999",
-            "alias_normalized": "1.1.999.0",
-            "version": "dev-develop",
-            "package": "winter/wn-backend-module"
-        },
-        {
-            "alias": "1.1.999",
-            "alias_normalized": "1.1.999.0",
-            "version": "dev-develop",
-            "package": "winter/wn-cms-module"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "winter/storm": 20,
-        "winter/wn-system-module": 20,
-        "winter/wn-backend-module": 20,
-        "winter/wn-cms-module": 20,
         "numencode/fundamentals-plugin": 20,
         "numencode/widgets-plugin": 20,
         "numencode/blogextension-plugin": 20,
-        "rainlab/blog-plugin": 20,
-        "rainlab/pages-plugin": 20,
-        "rainlab/sitemap-plugin": 20,
-        "rainlab/translate-plugin": 20,
         "offline/oc-site-search-plugin": 20,
-        "renatio/dropboxadapter-plugin": 20
+        "renatio/dropboxadapter-plugin": 20,
+        "rainlab/blog-plugin": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.3, >=7.2, >=7.2, >=7.2, >=7.0, >=5.5.9, >=5.5.9, >=5.5.9, >=7.0, >=7.0"
+        "php": ">=7.2.9, >=7.2, >=7.2, >=7.2, >=7.0, >=7.0, >=7.0, >=7.0, >=7.2, >=7.2, >=7.2"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
