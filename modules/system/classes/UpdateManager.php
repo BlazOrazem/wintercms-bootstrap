@@ -186,9 +186,11 @@ class UpdateManager
 
         // Set replacement warning messages
         foreach ($this->pluginManager->getReplacementMap() as $alias => $plugin) {
-            $this->addMessage($plugin, Lang::get('system::lang.updates.update_warnings_plugin_replace_cli', [
+            if ($this->pluginManager->getActiveReplacementMap($alias)) {
+                $this->addMessage($plugin, Lang::get('system::lang.updates.update_warnings_plugin_replace_cli', [
                     'alias' => '<info>' . $alias . '</info>'
-            ]));
+                ]));
+            }
         }
 
         // Print messages returned by migrations / seeders
@@ -814,7 +816,16 @@ class UpdateManager
      */
     public function requestChangelog()
     {
-        $result = Http::get($this->createServerUrl('changelog'));
+        $build = Parameter::get('system::core.build');
+
+        // Determine branch
+        if (!is_null($build)) {
+            $branch = explode('.', $build);
+            array_pop($branch);
+            $branch = implode('.', $branch);
+        }
+
+        $result = Http::get($this->createServerUrl('changelog' . ((!is_null($branch)) ? '/' . $branch : '')));
 
         if ($result->code == 404) {
             throw new ApplicationException(Lang::get('system::lang.server.response_empty'));
