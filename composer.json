@@ -36,10 +36,6 @@
         {
             "type": "git",
             "url": "git@github.com:numencode/widgets-plugin.git"
-        },
-        {
-            "type": "git",
-            "url": "git@github.com:numencode/blogextension-plugin.git"
         }
     ],
     "require": {
@@ -53,7 +49,7 @@
 
         "numencode/fundamentals-plugin": "dev-master",
         "numencode/widgets-plugin": "dev-master",
-        "numencode/blogextension-plugin": "dev-master",
+        "numencode/blogextension-plugin": "^2.0",
 
         "offline/oc-site-search-plugin": "dev-master",
         "renatio/dropboxadapter-plugin": "dev-master",
