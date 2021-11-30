@@ -41,7 +41,7 @@ return [
             'backup'    => [
                 'path'        => rtrim(env('REMOTE_PRODUCTION_PATH'), '/'),
                 'branch'      => env('REMOTE_PRODUCTION_BRANCH', 'prod'),
-                'branch_main' => env('REMOTE_PRODUCTION_BRANCH_MAIN', 'master'),
+                'branch_main' => env('REMOTE_PRODUCTION_BRANCH_MAIN', 'main'),
 
                 // Permissions are required if there are multiple users with different access rights on the server
                 'permissions' => [
