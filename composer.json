@@ -31,11 +31,19 @@
     "repositories": [
         {
             "type": "git",
-            "url": "git@github.com:numencode/fundamentals-plugin.git"
+            "url": "git@github.com:numencode/wn-fundamentals-plugin.git"
         },
         {
             "type": "git",
-            "url": "git@github.com:numencode/widgets-plugin.git"
+            "url": "git@github.com:numencode/wn-widgets-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:numencode/wn-blogextension-plugin.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:numencode/wn-backup-plugin.git"
         }
     ],
     "require": {
@@ -47,9 +55,10 @@
         "laravel/framework": "~6.0",
         "wikimedia/composer-merge-plugin": "~2.0.1",
 
-        "numencode/fundamentals-plugin": "dev-master",
-        "numencode/widgets-plugin": "dev-master",
-        "numencode/blogextension-plugin": "^2.0",
+        "numencode/wn-fundamentals-plugin": "dev-main",
+        "numencode/wn-widgets-plugin": "dev-main",
+        "numencode/wn-blogextension-plugin": "dev-main",
+        "numencode/wn-backup-plugin": "dev-main",
 
         "offline/oc-site-search-plugin": "dev-master",
         "renatio/dropboxadapter-plugin": "dev-master",
