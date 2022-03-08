@@ -2317,7 +2317,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:numencode/wn-backup-plugin.git",
-                "reference": "dc2a4ba641839cd9d7a95de532b3817cb228c1e5"
+                "reference": "e2ef8b442429f5ac7efd9d9a742bc9f70eee3738"
             },
             "require": {
                 "laravelcollective/remote": "^6.2",
@@ -2348,7 +2348,7 @@
                 "issues": "https://github.com/numencode/wn-backup-plugin/issues",
                 "source": "https://github.com/numencode/wn-backup-plugin"
             },
-            "time": "2021-12-10T13:24:03+00:00"
+            "time": "2022-03-08T11:53:38+00:00"
         },
         {
             "name": "numencode/wn-blogextension-plugin",
